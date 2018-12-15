@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path,include
 from fishpond import views as fishpond_views
 from django.contrib.auth import views as auth_views
+from django.shortcuts import redirect
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',auth_views.LoginView.as_view(template_name='fishpond/index.html'),name='fishpond-home'),
-    path('',fishpond_views.log_out,name='fishpond-logout'),
+    path('logout/',fishpond_views.log_out,name='fishpond-logout'),
     path('setting/',fishpond_views.setting,name='fishpond-setting'),
     path('dash/',fishpond_views.dash,name='fishpond-dash'),
 ]

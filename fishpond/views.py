@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 import pyrebase
 from django.contrib import auth
@@ -23,11 +23,13 @@ def home(request):
 
 def log_out(request):
   logout(request)
-  return render(request,'fishpond/index.html')
+  return redirect('fishpond-home')
+
 @login_required
 def dash(request):
   return render(request, "fishpond/DashBoard.html")
 
+@login_required
 def setting(request):
   return render(request,'fishpond/setting.html')
 

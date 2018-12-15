@@ -14,6 +14,23 @@
         <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css'%}">
+        <script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js></script>
+        <script src="https://playground.abysscorp.org/chartjs/livecharts/dist/Chart.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script>
+
+    // Initialize Firebase
+
+    var config = {
+    apiKey: "AIzaSyAvymRwWy7fhc9cu40QdAeSgk209toOEuo",
+    authDomain: "test-82f89.firebaseapp.com",
+    databaseURL: "https://test-82f89.firebaseio.com",
+    projectId: "test-82f89",
+    storageBucket: "test-82f89.appspot.com",
+    messagingSenderId: "714335591195"
+  };
+  firebase.initializeApp(config);
+</script>
     </head>
 
     <body>
@@ -89,7 +106,7 @@
                             </li>
                         </ul>
                         <div class="sub-box ">
-                            <h1>27 c</h1> <!--- REAL TIME DATA GOING HERE-->
+                            <h1 id="valueTemp"></h1> <!--- REAL TIME DATA GOING HERE-->
                         </div>
                         
                         <hr>
@@ -155,5 +172,29 @@
      
 
         <script src="{% static 'js/dashboard.js' %}"></script>
+<script>
+    var ref = firebase.database().ref("ESP32");
+    var temp ;
+    ref.limitToLast(1).on("child_added", function(snapshot) {
+
+        token = snapshot.key
+
+        console.log(token);
+
+        firebase.database().ref('/ESP32/' + token).once("value")
+
+          .then(function(snapshot) {
+
+            temp = snapshot.child("temp_now").val();
+
+            document.getElementById("valueTemp").innerHTML = temp;
+
+            
+
+            console.log(temp);
+
+      });
+});
+</script>
     </body>
 </html>
