@@ -17,6 +17,7 @@
     </head>
 
     <body>
+    {% csrf_token %}
         <!-- This is the Sidebar of Dashboard -->
         <div class="sidebar">
             <div class="logo-pic">
@@ -26,7 +27,7 @@
                 <li><a class="fas fa-th-large" href="{% url 'fishpond-dash' %}" ></a></li>
                 <li><a href="" class="far fa-calendar-alt"></a></li>
                 <li><a href="" class="fas fa-user"></a></li>
-                <li><a href="" class="fas fa-sign-out-alt"></a></li>
+                <li><a href="{% url 'fishpond-logout' %}" class="fas fa-sign-out-alt"></a></li>
             </ul>
         </div>
         <!-- END of SideBar -->
@@ -61,7 +62,7 @@
                 <div class="row the-head-2 ">
                     <div class="col-md-3 the-header-nav">
                         <ul>
-                            <a class="nav-item nav-link" href="{% url 'fishpond-home' %}">Overview</a>
+                            <a class="nav-item nav-link" href="{% url 'fishpond-dash' %}">Overview</a>
                             <a class="nav-item nav-link" href="{% url 'fishpond-setting' %}">Setting</a>
                         </ul>
                     </div>

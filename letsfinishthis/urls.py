@@ -20,8 +20,8 @@ from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',fishpond_views.home,name='fishpond-home'),
+    path('',auth_views.LoginView.as_view(template_name='fishpond/index.html'),name='fishpond-home'),
+    path('',fishpond_views.log_out,name='fishpond-logout'),
     path('setting/',fishpond_views.setting,name='fishpond-setting'),
     path('dash/',fishpond_views.dash,name='fishpond-dash'),
-    path('logout/',fishpond_views.logout,name='fishpond-logout')
 ]
