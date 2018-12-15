@@ -1,0 +1,223 @@
+@import "https://fonts.googleapis.com/css?family=Ubuntu+Condensed" ;
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+body,html {
+    margin:0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    /*  font selecting 
+    font-family: 'Ubuntu Condensed', sans-serif;
+    */
+    font-family: 'Quicksand', sans-serif;
+}
+
+/*-----------------------------------
+
+    SIDE BAR CSS
+
+ -----------------------------------*/
+.sidebar{
+    float: left;
+    width: 75px;
+    height: 100%;
+    background-color: #2f323a;
+    overflow:hidden; 
+}
+.logo-pic{
+    height: 150px;
+    width: 100%;
+    line-height: 80px;
+    text-align: center;
+    display: block;;
+
+}
+.logo-pic a img{
+    height: 50px;
+    width: 50px;
+
+}
+
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+}
+.sidebar ul li {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    height: 80px;
+    width: 100%;
+    font-size: 20px;
+    line-height: 80px;
+    text-align: center;
+    display: block;
+    transition: 0.6s all;
+    
+}
+
+.sidebar ul li a:hover {
+    background-color: #5093e1; 
+}
+
+/*--------------------------------------
+
+    Header CSS
+
+--------------------------------------*/
+.the-head-content {
+    height: auto;
+    width: 100%;
+    background: white;
+    
+}
+
+.the-head-1 {
+    margin-left: 0px;
+    height: 100px;
+    width: 100%;
+    background:white;
+}
+
+.the-header-text {
+    font-size: 30px;
+    font-weight: 50;
+    
+}
+
+.the-header-text  {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    margin-top: 40px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    text-align: center;
+}
+
+.the-content {
+    background: #edeff5;
+}
+
+.hilight-bg-debug {
+    background-color: red;
+}
+
+/*-----------------------------------------
+
+    Clock box css 
+
+-----------------------------------------*/
+.clock-box {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: center;
+    flex-direction: row; 
+    text-align: center;
+}
+
+#clock {
+    margin-top: 40px;
+}
+
+/*-----------------------------------------
+
+    the-header-Nav CSS
+
+-------------------------------------------*/
+
+.the-header-nav ul {
+    float: left;
+    display: flex;
+    margin: 0 ;
+    padding: 0;
+
+}
+.the-header-nav ul li {
+    list-style: none;
+
+}
+.the-header-nav ul li a {
+    position: relative;
+    display: block;
+    height: 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #5093e1;
+    text-decoration: none;
+    transition: 0.5s;
+
+
+    
+}
+
+
+
+/*-----------------------------------------
+
+    Row of 3 card CSS
+
+-------------------------------------------*/
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: center;
+    flex-direction: row; 
+
+}
+
+.box {
+    width: 270px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0px 7px 30px 2px rgba(0,0,0,0.18);
+    margin: 25px auto;
+    background: #ffffff;
+    transition: 0.3s;
+
+}
+
+.box ul li img {
+    margin-left: 25px;
+    margin-top: 25px;
+    height: 60px;
+    width: 60px;
+}
+
+.sub-box {
+    position: absolute ;
+    text-align: center;
+    margin-top: -75px;
+    margin-left: 150px;
+
+}
+.sub-box h1 {
+    font-weight: 700;
+
+}
+.box-footer {
+    margin-top: -15px;
+    text-align: center;
+}
+.box-footer h4 {
+    font-size: 25px;
+}
+
+@media (max-width: 320px) {
+    .sub-box {
+        position: absolute ;
+        text-align: center;
+        margin-top: -75px;
+        margin-left: 120px
+    }
+}

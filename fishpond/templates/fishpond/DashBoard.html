@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>DashBoard</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/dashboard.css'%}">
+    </head>
+
+    <body>
+    {% csrf_token %}
+        <!-- This is the Sidebar of Dashboard -->
+        <div class="sidebar">
+            <div class="logo-pic">
+                <a class=""><img class="user-img"src="{% static 'img/plixi-logo.png' %}" alt=""></a>
+            </div>
+            <ul>
+                <li><a href="" class="fas fa-th-large"></a></li>
+                <li><a href="" class="far fa-calendar-alt"></a></li>
+                <li><a href="" class="fas fa-user"></a></li>
+                <li><a href="{% url 'fishpond-logout' %}" class="fas fa-sign-out-alt"></a></li>
+            </ul>
+        </div>
+        <!-- END of SideBar -->
+
+        <!-- This is the Header of DashBoard -->
+        <div class="row ">
+            <div class="the-head-content ">
+
+                <!-- HEADER ROW 1 -->
+                <div class="row the-head-1">
+                    <!-- BREAD HERE-->
+                    <div class="col-md-4">
+                        <div class="the-header-text">
+                           <h3>DashBoard  &nbsp; | &nbsp;  Fish Pond</h3>
+                        </div>
+                    </div>
+                    <!-- CLOCK HERE -->
+                    <div class="col-md-4 ">
+                        <div class="clock-box">
+                            <h5 id="clock"></h5>
+                        </div>
+
+                    </div>
+
+
+                    <!-- JUSt a Spacing here-->
+                    <div class="col-md-4 "></div>
+
+                </div>
+
+                <!-- HEADER ROW 2 -->
+                <div class="row the-head-2 ">
+                    <div class="col-md-3 the-header-nav">
+                        <ul>
+                            <a class="nav-item nav-link" href="{% url 'fishpond-dash' %}">Overview</a>
+                            <a class="nav-item nav-link" href="{% url 'fishpond-setting' %}">Setting</a>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--END of HEADER -->
+
+        <!--********* The Main Content Start Here ********** -->
+        <!--
+            ROW OF 3 CARDs
+        -->
+        <div class="row the-content">
+            <!--
+                CARD 1
+            -->
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="box">
+                        <ul class="list-inline">
+                            <li>
+                                <img src="{% static 'img/temperature.png' %}" alt="">
+                            </li>
+                        </ul>
+                        <div class="sub-box ">
+                            <h1>27 c</h1> <!--- REAL TIME DATA GOING HERE-->
+                        </div>
+                        
+                        <hr>
+                        <div class="box-footer">
+                            <h4 >Temperature</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                CARD 2
+            -->
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="box">
+                        <ul class="list-inline">
+                            <li>
+                                <img src="{% static 'img/water-drop.png' %}" alt="">
+                            </li>
+                        </ul>
+                        <div class="sub-box ">
+                            <h1>6</h1>   <!--- REAL TIME DATA GOING HERE-->
+                        </div>
+                        <hr>
+                        <div class="box-footer">
+                            <h4 >Dissolved Oxygen</h4>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--
+                CARD 3
+            -->
+            <div class="col-md-4">
+                <div class="container">
+                    <div class="box">
+                        <ul class="list-inline">
+                            <li>
+                                <img src="{% static 'img/light-bulb.png' %}" alt="">
+                            </li>
+                            
+                        </ul>
+                        <div class="sub-box ">
+                            <h1>?</h1> <!--- REAL TIME DATA GOING HERE-->
+                        </div>
+                        <hr>
+                        <div class="box-footer">
+                            <h4 >Power Supply</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END of Row of 3 Cards-->
+        <!--
+            GRAPH HERE FROM Chart.js
+        -->
+        <div class="row the-content hilight-bg-debug">
+            GRAPH
+        </div>
+        <!-- End of Chart.js -->
+     
+
+        <script src="{% static 'js/dashboard.js' %}"></script>
+    </body>
+</html>

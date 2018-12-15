@@ -1,0 +1,237 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <title>DashBoard</title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800">
+        <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/setting.css'%}">
+    </head>
+
+    <body>
+        <!-- This is the Sidebar of Dashboard -->
+        <div class="sidebar">
+            <div class="logo-pic">
+                <a class=""><img class="user-img"src="{% static 'img/plixi-logo.png' %}" alt=""></a>
+            </div>
+            <ul>
+                <li><a class="fas fa-th-large" href="{% url 'fishpond-dash' %}" ></a></li>
+                <li><a href="" class="far fa-calendar-alt"></a></li>
+                <li><a href="" class="fas fa-user"></a></li>
+                <li><a href="" class="fas fa-sign-out-alt"></a></li>
+            </ul>
+        </div>
+        <!-- END of SideBar -->
+
+        <!-- This is the Header of DashBoard -->
+        <div class="row ">
+            <div class="the-head-content ">
+
+                <!-- HEADER ROW 1 -->
+                <div class="row the-head-1">
+                    <!-- BREAD HERE-->
+                    <div class="col-md-4">
+                        <div class="the-header-text">
+                           <h3>DashBoard  &nbsp; | &nbsp;  Fish Pond</h3>
+                        </div>
+                    </div>
+                    <!-- CLOCK HERE -->
+                    <div class="col-md-4 ">
+                        <div class="clock-box">
+                            <h5 id="clock"></h5>
+                        </div>
+
+                    </div>
+
+
+                    <!-- JUSt a Spacing here-->
+                    <div class="col-md-4 "></div>
+
+                </div>
+
+                <!-- HEADER ROW 2 -->
+                <div class="row the-head-2 ">
+                    <div class="col-md-3 the-header-nav">
+                        <ul>
+                            <a class="nav-item nav-link" href="{% url 'fishpond-home' %}">Overview</a>
+                            <a class="nav-item nav-link" href="{% url 'fishpond-setting' %}">Setting</a>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--END of HEADER -->
+
+        <!--********* The Main Content Start Here ********** -->
+        <!--
+            
+            Setting HERE
+            
+        -->
+        <!-- **************************************************************************************************************** -->
+        <!-- Card 1 for setting here -->
+        <div class="row the-content">
+            <div class="setting-container">
+                <div class="box">
+                    <div class="row">
+                        <!-- mini line here -->
+                        <div class="col-md-1 box-1 ">
+                            <div class="left-line"></div>
+                        </div>
+                        <!-- logo here -->
+                        <div class="col-md-2 box-2 ">
+                            <img src="{% static 'img/temperature.png' %}" alt="">
+                        </div>
+                        <!--Input form here -->
+                        <div class="col-md-9 ">
+                            <div class="box-9">
+                                <form >
+                                    <label class="header-setting-label"><h4>Temperature</h4></label>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Maximum</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">28 c</div> <!-- Number Only Check here-->
+                                                </div>
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max temp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Minimum</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">24 c</div> <!-- Number Only Check here-->
+                                                </div>
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min temp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn main-bg-1 mb-2 ">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!--******************************************************************************************************************-->
+        <!-- Card 2 for setting here -->
+        <div class="row the-content">
+            <div class="setting-container">
+                <div class="box">
+                    <div class="row">
+                        <!-- mini line here -->
+                        <div class="col-md-1 box-1 ">
+                            <div class="left-line"></div>
+                        </div>
+                        <!-- logo here -->
+                        <div class="col-md-2 box-2 ">
+                            <img src="{% static 'img/oxygen.png' %}" alt="">
+                        </div>
+                        <!--Input form here -->
+                        <div class="col-md-9 ">
+                            <div class="box-9">
+                                <form >
+                                    <label class="header-setting-label"><h4>Dissolved Oxygen</h4></label>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Maximum</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text"> - </div> <!-- Number Only Check here-->
+                                                </div>
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max DO">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Minimum</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">5</div> <!-- Number Only Check here-->
+                                                </div>
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min DO">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn main-bg-1 mb-2 ">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <!-- *********************************************************************************************************************** -->
+        <!-- Card 3 for setting here -->
+        <div class="row the-content">
+            <div class="setting-container">
+                <div class="box">
+                    <div class="row">
+                        <!-- mini line here -->
+                        <div class="col-md-1 box-1 ">
+                            <div class="left-line"></div>
+                        </div>
+                        <!-- logo here -->
+                        <div class="col-md-2 box-2 ">
+                            <img src="{% static 'img/light-bulb.png' %}" alt="">
+                        </div>
+                        <!--Input form here -->
+                        <div class="col-md-9 ">
+                            <div class="box-9">
+                                <form >
+                                    <label class="header-setting-label"><h4>PowerSupply</h4></label>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Maximum</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">28 c</div> <!-- Number Only Check here-->
+                                                </div>
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max temp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Minimum</label>
+                                        <div class="col-sm-4">
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text">24 c</div> <!-- Number Only Check here-->
+                                                </div>
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min temp">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn main-bg-1 mb-2 ">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Chart.js -->
+     
+
+        <script src="{% static 'js/dashboard.js'%}"></script>
+    </body>
+</html>
