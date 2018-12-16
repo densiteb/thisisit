@@ -27,14 +27,15 @@ def log_out(request):
 
 @login_required
 def dash(request):
+  print(request.user.password)
   return render(request, "fishpond/DashBoard.html")
 
 @login_required
 def setting(request):
+  user = authe.sign_in_with_email_and_password(user.email,user.password)
   return render(request,'fishpond/setting.html')
 
 def post_setting(request):
   mintemp = request.POST.get('mintemp')
   maxtemp = request.POST.get('maxtemp')
-  print(mintemp,maxtemp)
   return render(request,'fishpond/setting.html')

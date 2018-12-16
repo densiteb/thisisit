@@ -53,7 +53,7 @@
                         <div class="left-line2"></div>
                     </div>
                     <img src="{% static 'img/oxygen.png' %}" alt="">
-                    <h4>6 mg/L</h4> <!-- REAL TIME VALIE HERE -->
+                    <h4 id="valueDissolved"></h4> <!-- REAL TIME VALIE HERE -->
                     
                     <p>DissolvedOxygen</p>
                 </div>
@@ -87,7 +87,7 @@
                 <h1 style="text-align:center">Admin Login</h1>
                 {{ form|crispy }}
                 </div>
-                <div class="container">      
+                <div class="container">    
                   <button type="submit"class="btn btn-info" style="margin-top:10px; margin-left: 40%;" ><i class="fas fa-align-left"></i><span>&nbsp; Admin Login</span></button>  
                   <a href="#" style="text-decoration:none; float:right; margin-right:34px; margin-top:26px;">Forgot Password ?</a>
                 </div>
@@ -108,8 +108,10 @@
 }
 </script>
 <script>
-    var ref = firebase.database().ref("ESP32");
+    var ref = firebase.database().ref("python");
     var temp ;
+    var time;
+    var dissolved ;
     ref.limitToLast(1).on("child_added", function(snapshot) {
 
         token = snapshot.key
@@ -117,19 +119,34 @@
         console.log(token);
 
         firebase.database().ref('/ESP32/' + token).once("value")
-
           .then(function(snapshot) {
-
             temp = snapshot.child("temp_now").val();
-
             document.getElementById("valueTemp").innerHTML = temp;
-
-            
-
             console.log(temp);
+        });
+        firebase.database().ref('/History/' + token).once("value")
+        .then(function(snapshot) {
+          time = snapshot.child("time").val();
+          console.log(time);
+    });
+    firebase.database().ref('/ESP32/' + token).once("value")
+      .then(function(snapshot) {
+        dissolved = snapshot.child("dissolved_now").val();
+        document.getElementById("valueDissolved").innerHTML = dissolved;
+        console.log(dissolved);
 
-      });
+
+
+  });
+
+
 });
+    
+    
+
+
+
+
 </script>
 </body>
 </html>
