@@ -25,8 +25,6 @@
             </div>
             <ul>
                 <li><a class="fas fa-th-large" href="{% url 'fishpond-dash' %}" ></a></li>
-                <li><a href="" class="far fa-calendar-alt"></a></li>
-                <li><a href="" class="fas fa-user"></a></li>
                 <li><a href="{% url 'fishpond-logout' %}" class="fas fa-sign-out-alt"></a></li>
             </ul>
         </div>
@@ -183,53 +181,6 @@
         </div>
         <!-- *********************************************************************************************************************** -->
         <!-- Card 3 for setting here -->
-        <div class="row the-content">
-            <div class="setting-container">
-                <div class="box">
-                    <div class="row">
-                        <!-- mini line here -->
-                        <div class="col-md-1 box-1 ">
-                            <div class="left-line"></div>
-                        </div>
-                        <!-- logo here -->
-                        <div class="col-md-2 box-2 ">
-                            <img src="{% static 'img/light-bulb.png' %}" alt="">
-                        </div>
-                        <!--Input form here -->
-                        <div class="col-md-9 ">
-                            <div class="box-9">
-                                <form >
-                                    <label class="header-setting-label"><h4>PowerSupply</h4></label>
-                                    <div class="form-group row">
-                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Maximum</label>
-                                        <div class="col-sm-4">
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">28 c</div> <!-- Number Only Check here-->
-                                                </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max temp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Minimum</label>
-                                        <div class="col-sm-4">
-                                            <div class="input-group mb-2">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text">24 c</div> <!-- Number Only Check here-->
-                                                </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min temp">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn main-bg-1 mb-2 ">Submit</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
         </div>
 
         <!-- End of Chart.js -->
