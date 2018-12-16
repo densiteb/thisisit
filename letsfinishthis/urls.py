@@ -25,5 +25,6 @@ urlpatterns = [
     path('logout/',fishpond_views.log_out,name='fishpond-logout'),
     path('setting/',fishpond_views.setting,name='fishpond-setting'),
     path('dash/',fishpond_views.dash,name='fishpond-dash'),
-    path('post_setting/',fishpond_views.post_setting,name='fishpond-postset')
+    path('post_settingtemp/',fishpond_views.post_settingtemp,name='fishpond-postsettemp'),
+    path('post_settingDO/',fishpond_views.post_settingDO,name='fishpond-postsetDO'),
 ]

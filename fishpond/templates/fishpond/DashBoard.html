@@ -126,7 +126,7 @@
                             </li>
                         </ul>
                         <div class="sub-box ">
-                            <h1>6</h1>   <!--- REAL TIME DATA GOING HERE-->
+                            <h1 id="valueDissolved"></h1>   <!--- REAL TIME DATA GOING HERE-->
                         </div>
                         <hr>
                         <div class="box-footer">
@@ -153,8 +153,10 @@
 
         <script src="{% static 'js/dashboard.js' %}"></script>
 <script>
-    var ref = firebase.database().ref("ESP32");
+     var ref = firebase.database().ref("python");
     var temp ;
+    var time;
+    var dissolved ;
     ref.limitToLast(1).on("child_added", function(snapshot) {
 
         token = snapshot.key
@@ -162,18 +164,22 @@
         console.log(token);
 
         firebase.database().ref('/ESP32/' + token).once("value")
-
           .then(function(snapshot) {
-
             temp = snapshot.child("temp_now").val();
-
             document.getElementById("valueTemp").innerHTML = temp;
-
-            
-
             console.log(temp);
-
-      });
+        });
+        firebase.database().ref('/History/' + token).once("value")
+        .then(function(snapshot) {
+          time = snapshot.child("time").val();
+          console.log(time);
+    });
+    firebase.database().ref('/ESP32/' + token).once("value")
+      .then(function(snapshot) {
+        dissolved = snapshot.child("dissolved_now").val();
+        document.getElementById("valueDissolved").innerHTML = dissolved;
+        console.log(dissolved);
+        });
 });
 </script>
     </body>

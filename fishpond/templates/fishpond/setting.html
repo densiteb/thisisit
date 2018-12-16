@@ -95,7 +95,7 @@
                         <!--Input form here -->
                         <div class="col-md-9 ">
                             <div class="box-9">
-                                <form action='/post_setting/' method='POST'>
+                                <form action='/post_settingtemp/' method='POST'>
                                     {% csrf_token %}
                                     <label class="header-setting-label"><h4>Temperature</h4></label>
                                     <div class="form-group row">
@@ -147,7 +147,8 @@
                         <!--Input form here -->
                         <div class="col-md-9 ">
                             <div class="box-9">
-                                <form >
+                                <form action="/post_settingDO/" method="POST">
+                                    {% csrf_token %}
                                     <label class="header-setting-label"><h4>Dissolved Oxygen</h4></label>
                                     <div class="form-group row">
                                         <label for="inputPassword3" class="col-sm-2 col-form-label">Maximum</label>
@@ -156,7 +157,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text"> - </div> <!-- Number Only Check here-->
                                                 </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max DO">
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max DO" name="maxDO">
                                             </div>
                                         </div>
                                     </div>
@@ -167,7 +168,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">5</div> <!-- Number Only Check here-->
                                                 </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min DO">
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min DO" name="minDO">
                                             </div>
                                         </div>
                                     </div>

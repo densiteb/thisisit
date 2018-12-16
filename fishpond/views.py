@@ -5,18 +5,18 @@ from django.contrib import auth
 from django.contrib.auth import authenticate,login,logout
 
 config = {
-    'apiKey': "AIzaSyCb8xRzfsic8CRqdRr1FBdnSfPrnbg_nIc",
-    'authDomain': "softdev18-a2b9c.firebaseapp.com",
-    'databaseURL': "https://softdev18-a2b9c.firebaseio.com",
-    'projectId': "softdev18-a2b9c",
-    'storageBucket': "softdev18-a2b9c.appspot.com",
-    'messagingSenderId': "1080121243011"
+    'apiKey': "AIzaSyAvymRwWy7fhc9cu40QdAeSgk209toOEuo",
+    'authDomain': "test-82f89.firebaseapp.com",
+    'databaseURL': "https://test-82f89.firebaseio.com",
+    'projectId': "test-82f89",
+    'storageBucket': "test-82f89.appspot.com",
+    'messagingSenderId': "714335591195"
   }
 
 firebase = pyrebase.initialize_app(config)
 
 authe = firebase.auth()
-database=firebase.database()
+db = firebase.database()
 # Create your views here.
 def home(request):
   return render(request,'fishpond/index.html')
@@ -27,15 +27,24 @@ def log_out(request):
 
 @login_required
 def dash(request):
-  print(request.user.password)
+  user = authe.sign_in_with_email_and_password(request.user.email,request.user.password)
   return render(request, "fishpond/DashBoard.html")
 
 @login_required
 def setting(request):
-  user = authe.sign_in_with_email_and_password(user.email,user.password)
+  user = authe.sign_in_with_email_and_password(request.user.email,request.user.password)
   return render(request,'fishpond/setting.html')
-
-def post_setting(request):
+@login_required
+def post_settingtemp(request):
   mintemp = request.POST.get('mintemp')
   maxtemp = request.POST.get('maxtemp')
-  return render(request,'fishpond/setting.html')
+  db.child('user_change').child('maxtemp').push(maxtemp)
+  db.child('user_change').child('mintemp').push(mintemp)
+  return redirect('fishpond-setting')
+@login_required
+def post_settingDO(request):
+  minDO = request.POST.get('minDO')
+  maxDO = request.POST.get('maxDO')
+  db.child('user_change').child('maxDO').push(maxDO)
+  db.child('user_change').child('minDO').push(minDO)
+  return redirect('fishpond-setting')
