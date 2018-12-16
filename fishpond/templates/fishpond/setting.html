@@ -95,7 +95,8 @@
                         <!--Input form here -->
                         <div class="col-md-9 ">
                             <div class="box-9">
-                                <form >
+                                <form action='/post_setting/' method='POST'>
+                                    {% csrf_token %}
                                     <label class="header-setting-label"><h4>Temperature</h4></label>
                                     <div class="form-group row">
                                         <label for="inputPassword3" class="col-sm-2 col-form-label">Maximum</label>
@@ -104,7 +105,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">28 c</div> <!-- Number Only Check here-->
                                                 </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max temp">
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="max temp" name= 'maxtemp'>
                                             </div>
                                         </div>
                                     </div>
@@ -115,7 +116,7 @@
                                                 <div class="input-group-prepend">
                                                     <div class="input-group-text">24 c</div> <!-- Number Only Check here-->
                                                 </div>
-                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min temp">
+                                                <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="min temp" name='mintemp'>
                                             </div>
                                         </div>
                                     </div>

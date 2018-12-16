@@ -4,7 +4,7 @@ var clock = document.getElementById('clock');
 // Function Realtime clock
 function DayClock() {
     var time = new Date ();
-    var setOfDay = ["Mon","Tue","Wed","Thurs","Fri","Sat","Sun"];
+    var setOfDay = ["Sun","Mon","Tue","Wed","Thurs","Fri","Sat"];
 
     var day = setOfDay[time.getDay()];
     var hours = time.getHours().toString();

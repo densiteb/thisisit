@@ -33,3 +33,8 @@ def dash(request):
 def setting(request):
   return render(request,'fishpond/setting.html')
 
+def post_setting(request):
+  mintemp = request.POST.get('mintemp')
+  maxtemp = request.POST.get('maxtemp')
+  print(mintemp,maxtemp)
+  return render(request,'fishpond/setting.html')
