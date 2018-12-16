@@ -10,7 +10,41 @@ body,html {
     */
     font-family: 'Quicksand', sans-serif;
 }
+/*
 
+    Main Back ground color scheme
+
+*/
+.main-bg-1 {
+    background-color: #5093e1
+}
+
+.main-bg-2{
+    background-color: #2f323a;
+}
+.main-bg-3 {
+    background: #edeff5;
+}
+
+.debug-1 {
+    background-color: red;
+}
+
+.debug-2 {
+    background-color: yellow;
+}
+
+.debug-3 {
+    background-color: greenyellow;
+}
+
+.debug-4 {
+    background-color: blue;
+}
+
+.debug-5 {
+    background-color: purple;
+}
 /*-----------------------------------
 
     SIDE BAR CSS
@@ -112,14 +146,11 @@ body,html {
 
 -----------------------------------------*/
 .clock-box {
-    width: 100%;
+    width: 50%;
     height: 100px;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    flex: center;
-    flex-direction: row; 
-    text-align: center;
+    float: left;
+    background: red;
+    
 }
 
 #clock {
@@ -212,7 +243,26 @@ body,html {
 .box-footer h4 {
     font-size: 25px;
 }
+/*
+    GRAPH
 
+*/
+.graph-box {
+    width: 700px;
+    height: 600px;
+    margin-top: 10px;
+    border-color: #2f323a;
+    border-radius: 10px;
+    box-shadow: 0px 7px 30px 2px rgba(0,0,0,0.18);
+    background: #ffffff;
+    transition: 0.3s;
+}
+.chart-canvas-confix {
+    width: 500px;
+    height: 500px;
+    margin-left: 15%;
+
+}
 @media (max-width: 320px) {
     .sub-box {
         position: absolute ;

@@ -13,6 +13,7 @@
     <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css'%}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" type="text/javascript" href="{% static 'js/Graph.js' %}">
     <title>Fishpond</title>
     <script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js></script>
     <script src="https://playground.abysscorp.org/chartjs/livecharts/dist/Chart.min.js"></script>
@@ -62,7 +63,12 @@
         </div>
         <div class="col-md-6  justify-content-start d-flex align-items-center">
             <div class="graph-box">
-                graph
+                    <div class="chart-canvas-confix ">
+                            <canvas id="forecast" width="" height=""></canvas>
+                            <button id="0" type="button" >ShowBoth</button>
+                            <button id="1" type="button" >Temp</button>
+                            <button id="2" type="button">D.O.</button>
+                
             </div>
         </div>
         
@@ -142,5 +148,11 @@
 
 });
 </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
+    <script src="{% static 'js/lib/Chart.min.js'%}"></script>
+    <script src="{% static 'js/lib/chartjs-plugin-annotation.min.js'%}"></script>
+    <script src="{% static 'js/lib/jquery.min.js'%}"></script>
+    <script src="{% static 'js/Graph.js'%}"></script>
+    <script src="{% static 'js/dashboard.js'%}"></script>
 </body>
 </html>

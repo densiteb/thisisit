@@ -17,6 +17,29 @@ body,html {
 .main-bg-2{
     background-color: #2f323a;
 }
+.main-bg-3 {
+    background: #edeff5;
+}
+
+.debug-1 {
+    background-color: red;
+}
+
+.debug-2 {
+    background-color: yellow;
+}
+
+.debug-3 {
+    background-color: greenyellow;
+}
+
+.debug-4 {
+    background-color: blue;
+}
+
+.debug-5 {
+    background-color: purple;
+}
 
 /*-----------------------------------
     SIDE BAR CSS
