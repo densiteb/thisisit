@@ -1,6 +1,8 @@
+
 var chart_labels = ['06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
 var temp_dataset = ['20', '21', '25', '32', '30', '27'];
 var DO_dataset = ['6', '7', '8', '6', '4', '2'];
+var chart_labels2 = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
 
 var maxmin_Temp_Threshold = ['24','30']; // <------------------ Get FROM CLOUND /Setting / max
 var maxmin_DO_Threshold = ['4','15']; // <------------------ GET FROM CLOUND /setting / min
@@ -27,7 +29,7 @@ var maincolorTheme_RED_2 = "rgba(246, 81, 119, 0.7)" ; // MAIN COLOUR 2 Green
 var debug_red = "rgba(255, 0, 0, 1)";
 
 //----------------------------------
-var chart_labels2 = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00'];
+
 
 
 
@@ -35,7 +37,7 @@ var chart_labels2 = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:0
 // TEMP CHART
 var Temp_CHART_config = {
     type: 'line',
-    data: 
+    data:
     {
         labels: chart_labels2,
         datasets: [
@@ -62,24 +64,24 @@ var Temp_CHART_config = {
             },
         ]
     },
-    options: 
+    options:
     {
     	responsive: true,
-        scales: 
+        scales:
         {
-            yAxes: 
+            yAxes:
             [
                 {
-                    
+
                     position: "left",
                     "id": "y-axis-0",
                 },
             ]
         },
-        annotation: 
+        annotation:
         {
             drawTime: 'afterDatasetsDraw',
-            annotations: 
+            annotations:
             [
                 {
                     // Maximum Threshold
@@ -90,13 +92,13 @@ var Temp_CHART_config = {
                     value: maxmin_Temp_Threshold[1],
                     borderColor: maincolorTheme_RED_2, //set color
                     borderWidth: 4,
-                    label: 
+                    label:
                     {
                         backgroundColor: maincolorTheme_RED_2,
                         content: "max",
                         enabled: true
-                    },                     
-                },    
+                    },
+                },
                 {
                     // Minmimum Threshold
                     type: 'line',
@@ -106,12 +108,12 @@ var Temp_CHART_config = {
                     value: maxmin_Temp_Threshold[0],
                     borderColor: maincolorTheme_RED_2, //set color
                     borderWidth: 4,
-                    label: 
+                    label:
                     {
                         backgroundColor: maincolorTheme_RED_2,
                         content: "min",
                         enabled: true
-                    },    
+                    },
                 }
             ]
         }
@@ -149,7 +151,7 @@ var DO_CHART_config = {
     },
     options: {
     		responsive: true,
-            scales: 
+            scales:
             {
                 yAxes: [
                     {
@@ -170,13 +172,13 @@ var DO_CHART_config = {
                         value: maxmin_DO_Threshold[1],
                         borderColor: maincolorTheme_BLUE_2, //set color
                         borderWidth: 4,
-                        label: 
+                        label:
                         {
                             backgroundColor: maincolorTheme_BLUE_2,
                             content: "max",
                             enabled: true
                         },
-                        
+
                     },
                     {
                         // Minmimum Threshold
@@ -187,7 +189,7 @@ var DO_CHART_config = {
                         value: maxmin_DO_Threshold[0],
                         borderColor: maincolorTheme_BLUE_2, //set color
                         borderWidth: 4,
-                        label: 
+                        label:
                         {
                             backgroundColor: maincolorTheme_BLUE_2,
                             content: "min",
@@ -195,7 +197,7 @@ var DO_CHART_config = {
                         },
                     }
                 ]
-          
+
       }
 
 
@@ -229,7 +231,7 @@ var show_both_config = {
                 yAxisID: "y-axis-0",
                 data: temp_dataset,
             },
-            // DO 
+            // DO
             {
                 type: 'line',
                 fill: false,
@@ -256,7 +258,7 @@ var show_both_config = {
     },
     options: {
     		responsive: true,
-            scales: 
+            scales:
             {
                 yAxes: [
                     {
@@ -278,13 +280,13 @@ var show_both_config = {
                         value: maxmin_Temp_Threshold[1],
                         borderColor: maincolorTheme_RED_2, //set color
                         borderWidth: 4,
-                        label: 
+                        label:
                         {
                             backgroundColor: maincolorTheme_RED_2,
                             content: "max temp",
                             enabled: true
-                        },                     
-                    },    
+                        },
+                    },
                     {
                         // SET DAGGER LINE ----------------------------------
                         // Minmimum Threshold
@@ -295,12 +297,12 @@ var show_both_config = {
                         value: maxmin_Temp_Threshold[0],
                         borderColor: maincolorTheme_RED_2, //set color
                         borderWidth: 4,
-                        label: 
+                        label:
                         {
                             backgroundColor: maincolorTheme_RED_2,
                             content: "min temp",
                             enabled: true
-                        },    
+                        },
                     },
                     // DO--------------------------------------------------------------------
                     {
@@ -312,13 +314,13 @@ var show_both_config = {
                         value: maxmin_DO_Threshold[1],
                         borderColor: maincolorTheme_BLUE_2, //set color
                         borderWidth: 4,
-                        label: 
+                        label:
                         {
                             backgroundColor: maincolorTheme_BLUE_2,
                             content: "max d.o.",
                             enabled: true
                         },
-                        
+
                     },
                     {
                         // Minmimum Threshold
@@ -329,7 +331,7 @@ var show_both_config = {
                         value: maxmin_DO_Threshold[0],
                         borderColor: maincolorTheme_BLUE_2, //set color
                         borderWidth: 4,
-                        label: 
+                        label:
                         {
                             backgroundColor: maincolorTheme_BLUE_2,
                             content: "min d.o.",
@@ -337,15 +339,15 @@ var show_both_config = {
                         },
                     }
                 ]
-          
+
       }
 
 
     }
 };
 
-var ctx = document.getElementById("forecast").getContext('2d');
-var forecast_chart = new Chart(ctx, show_both_config);
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, show_both_config);
 //console.log(forecast_chart.config.options.annoation)
 $("#0").click(function() {
     forecast_chart.destroy();
@@ -361,4 +363,3 @@ $("#2").click(function() {
     forecast_chart = new Chart(ctx, DO_CHART_config);
     console.log("destroy D.O. CHART")
 });
-

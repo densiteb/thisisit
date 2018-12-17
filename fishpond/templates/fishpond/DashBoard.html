@@ -18,20 +18,6 @@
         <script src=https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js></script>
         <script src="https://playground.abysscorp.org/chartjs/livecharts/dist/Chart.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-        <script>
-
-    // Initialize Firebase
-
-    var config = {
-    apiKey: "AIzaSyAvymRwWy7fhc9cu40QdAeSgk209toOEuo",
-    authDomain: "test-82f89.firebaseapp.com",
-    databaseURL: "https://test-82f89.firebaseio.com",
-    projectId: "test-82f89",
-    storageBucket: "test-82f89.appspot.com",
-    messagingSenderId: "714335591195"
-  };
-  firebase.initializeApp(config);
-</script>
     </head>
 
     <body>
@@ -42,7 +28,7 @@
                 <a class=""><img class="user-img"src="{% static 'img/plixi-logo.png' %}" alt=""></a>
             </div>
             <ul>
-                <li><a href="" class="fas fa-th-large"></a></li>
+                <li><a href="{% url 'fishpond-dash'%}" class="fas fa-th-large"></a></li>
                 <li><a href="{% url 'fishpond-logout' %}" class="fas fa-sign-out-alt"></a></li>
             </ul>
         </div>
@@ -61,7 +47,7 @@
                         </div>
                     </div>
                     <!-- CLOCK HERE -->
-                    <div class="col-md-4 ">
+                    <div class="col-md-4 d-flex justify-content-center">
                         <div class="clock-box">
                             <h5 id="clock"></h5>
                         </div>
@@ -70,7 +56,7 @@
 
 
                     <!-- JUSt a Spacing here-->
-                    <div class="col-md-4 "></div>
+                    <div class="col-md-4 d-flex justify-content-center"></div>
                     {{request.user.username}}
                     </div>
                     
@@ -152,7 +138,7 @@
             <div class="">
                 <div class="graph-box">
                         <div class="chart-canvas-confix ">
-                                <canvas id="forecast" width="" height=""></canvas>
+                                <canvas id="myChart" width="" height=""></canvas>
                                 <button id="0" type="button" >ShowBoth</button>
                                 <button id="1" type="button" >Temp</button>
                                 <button id="2" type="button">D.O.</button>
@@ -165,42 +151,12 @@
      
 
         <script src="{% static 'js/dashboard.js' %}"></script>
-<script>
-     var ref = firebase.database().ref("python");
-    var temp ;
-    var time;
-    var dissolved ;
-    ref.limitToLast(1).on("child_added", function(snapshot) {
-
-        token = snapshot.key
-
-        console.log(token);
-
-        firebase.database().ref('/ESP32/' + token).once("value")
-          .then(function(snapshot) {
-            temp = snapshot.child("temp_now").val();
-            document.getElementById("valueTemp").innerHTML = temp;
-            console.log(temp);
-        });
-        firebase.database().ref('/History/' + token).once("value")
-        .then(function(snapshot) {
-          time = snapshot.child("time").val();
-          console.log(time);
-    });
-    firebase.database().ref('/ESP32/' + token).once("value")
-      .then(function(snapshot) {
-        dissolved = snapshot.child("dissolved_now").val();
-        document.getElementById("valueDissolved").innerHTML = dissolved;
-        console.log(dissolved);
-        });
-});
-</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/0.5.7/chartjs-plugin-annotation.js"></script>
         <script src="{% static 'js/lib/Chart.min.js'%}"></script>
         <script src="{% static 'js/lib/chartjs-plugin-annotation.min.js'%}"></script>
         <script src="{% static 'js/lib/jquery.min.js'%}"></script>
-        <script src="{% static 'js/Graph.js'%}"></script>
+        <script src="{% static 'js/GraphTest2.js'%}"></script>
         <script src="{% static 'js/dashboard.js'%}"></script>
-        <script src="{% static 'js/dashboard.js'%}"></script>
+        
     </body>
 </html>

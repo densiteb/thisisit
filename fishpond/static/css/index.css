@@ -450,9 +450,10 @@ input[type=text], input[type=password] {
         transition: 0.3s;
     } 
     .chart-canvas-confix {
-        width: 500px;
-        height: 500px;
-        margin-left: 15%;
+        width: 600px;
+        height: 430px;
+        margin-top: 50px;
+        margin-left: 30px;
 
         height: auto;
         display: flex;
@@ -460,6 +461,10 @@ input[type=text], input[type=password] {
         flex-wrap: wrap;
         flex-direction: row; 
         
+    }
+    #myChart {
+        height: 100%;
+        width: 100%;
     }
     /* 
 
